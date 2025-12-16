@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AI vs Human Text Detection</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f8;
+        padding: 40px;
+      }
+      .container {
+        max-width: 800px;
+        background: white;
+        padding: 25px;
+        margin: auto;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      textarea {
+        width: 100%;
+        height: 200px;
+        padding: 10px;
+        font-size: 14px;
+      }
+      button {
+        margin-top: 15px;
+        padding: 12px 20px;
+        font-size: 16px;
+        background: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      button:hover {
+        background: #0056b3;
+      }
+      .result {
+        margin-top: 25px;
+      }
+      .model {
+        margin-bottom: 10px;
+        padding: 10px;
+        background: #eef2f5;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>AI vs Human Text Detection</h2>
+      <p>Paste an academic abstract or text below:</p>
+
+      <textarea id="textInput" placeholder="Paste text here..."></textarea>
+      <button onclick="analyzeText()">Analyze</button>
+
+      <div class="result" id="result"></div>
+    </div>
+
+    <script>
+      function analyzeText() {
+        const text = document.getElementById("textInput").value;
+        const resultDiv = document.getElementById("result");
+
+        if (text.length < 30) {
+          resultDiv.innerHTML = "<p style='color:red'>Text is too short.</p>";
+          return;
+        }
+
+        fetch("/predict", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ text: text }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            let html = "<h3>Prediction Results</h3>";
+            for (const model in data) {
+              html += `
+                    <div class="model">
+                        <strong>${model}</strong><br>
+                        AI: ${data[model]["AI %"]}% <br>
+                        Human: ${data[model]["Human %"]}%
+                    </div>
+                `;
+            }
+            resultDiv.innerHTML = html;
+          })
+          .catch((error) => {
+            resultDiv.innerHTML = "<p style='color:red'>Error occurred.</p>";
+          });
+      }
+    </script>
+  </body>
+</html>
