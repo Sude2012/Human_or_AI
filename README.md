@@ -1,10 +1,4 @@
-# 🧠 HUMAN_OR_AI & 
 
-This repository contains **two machine learning–based web projects**, developed with a strong focus on **Natural Language Processing (NLP)**, **Regression Modeling**, and **Service-Oriented Architecture (SOA)**.
-
-Each project addresses a real-world problem and is designed with modular, scalable, and production-ready principles.
-
----
 
 # 🧠 HUMAN_OR_AI
 
@@ -28,7 +22,7 @@ This project aims to build a reliable system that can classify text content as *
 
 ---
 
-## 🧠 Models & Methodology (HUMAN_OR_AI)
+## 🧠 Models & Methodology
 
 ### Models Used
 
