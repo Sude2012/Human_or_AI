@@ -1,4 +1,4 @@
-# 🧠 HUMAN_OR_AI & 🚗 Used Car Price Prediction System
+# 🧠 HUMAN_OR_AI & 
 
 This repository contains **two machine learning–based web projects**, developed with a strong focus on **Natural Language Processing (NLP)**, **Regression Modeling**, and **Service-Oriented Architecture (SOA)**.
 
@@ -60,30 +60,5 @@ This project aims to build a reliable system that can classify text content as *
 
 ---
 
-# 🚗 Used Car Price Prediction System
 
-The **Used Car Price Prediction System** is a machine learning–based web application that estimates second-hand vehicle prices using regression models with **high accuracy**.
 
-The system is designed following a **Service-Oriented Architecture (SOA)**, integrating multiple backend services with a web-based frontend.
-
----
-
-## 📌 Project Overview
-
-- Predicts used car prices based on vehicle features
-- Uses advanced regression models
-- Clean and modular SOA-based backend
-- User-friendly web interface
-
----
-
-## 🧠 Machine Learning Models (Used Car)
-
-- 🌲 **Random Forest Regressor**
-- 🚀 **Gradient Boosting Regressor**
-
-### Dataset
-
-- ~2500 real-world vehicle records
-- Extensive data cleaning & preprocessing
-- Feature selection and normaliza
